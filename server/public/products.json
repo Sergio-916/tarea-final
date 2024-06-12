@@ -1,0 +1,199 @@
+[
+  {
+    "name": "Whole Wheat Bread",
+    "price": 2.99,
+    "discount": 0,
+    "stock": 100,
+    "category": "Bread",
+    "description": "Healthy whole wheat bread.",
+    "image": [
+      "whole_wheat_bread_1.jpg",
+      "whole_wheat_bread_2.jpg",
+      "whole_wheat_bread_3.jpg"
+    ],
+    "rating": 4.5,
+    "weight": 0.5
+  },
+  {
+    "name": "Sourdough Bread",
+    "price": 3.99,
+    "discount": 0,
+    "stock": 50,
+    "category": "Bread",
+    "description": "Delicious sourdough bread.",
+    "image": [
+      "sourdough_bread_1.jpg",
+      "sourdough_bread_2.jpg",
+      "sourdough_bread_3.jpg"
+    ],
+    "rating": 4.6,
+    "weight": 0.6
+  },
+  {
+    "name": "Baguette",
+    "price": 2.49,
+    "discount": 0,
+    "stock": 75,
+    "category": "Bread",
+    "description": "Classic French baguette.",
+    "image": ["baguette_1.jpg", "baguette_2.jpg", "baguette_3.jpg"],
+    "rating": 4.4,
+    "weight": 0.4
+  },
+  {
+    "name": "Croissant",
+    "price": 1.99,
+    "discount": 0,
+    "stock": 200,
+    "category": "Bakery",
+    "description": "Buttery and flaky croissant.",
+    "image": ["croissant_1.jpg", "croissant_2.jpg", "croissant_3.jpg"],
+    "rating": 4.7,
+    "weight": 0.1
+  },
+  {
+    "name": "Blueberry Muffin",
+    "price": 2.49,
+    "discount": 0,
+    "stock": 150,
+    "category": "Bakery",
+    "description": "Sweet blueberry muffin.",
+    "image": [
+      "blueberry_muffin_1.jpg",
+      "blueberry_muffin_2.jpg",
+      "blueberry_muffin_3.jpg"
+    ],
+    "rating": 4.5,
+    "weight": 0.15
+  },
+  {
+    "name": "Chocolate Chip Cookie",
+    "price": 0.99,
+    "discount": 0,
+    "stock": 300,
+    "category": "Bakery",
+    "description": "Classic chocolate chip cookie.",
+    "image": [
+      "chocolate_chip_cookie_1.jpg",
+      "chocolate_chip_cookie_2.jpg",
+      "chocolate_chip_cookie_3.jpg"
+    ],
+    "rating": 4.8,
+    "weight": 0.05
+  },
+  {
+    "name": "Apple Pie",
+    "price": 9.99,
+    "discount": 0,
+    "stock": 40,
+    "category": "Bakery",
+    "description": "Traditional apple pie.",
+    "image": ["apple_pie.jpg_1", "apple_pie.jpg_2", "apple_pie.jpg_3"],
+    "rating": 4.9,
+    "weight": 1.0
+  },
+  {
+    "name": "Vanilla Cupcake",
+    "price": 1.49,
+    "discount": 0,
+    "stock": 100,
+    "category": "Cakes",
+    "description": "Delicious vanilla cupcake.",
+    "image": [
+      "vanilla_cupcake_1.jpg",
+      "vanilla_cupcake_2.jpg",
+      "vanilla_cupcake_3.jpg"
+    ],
+    "rating": 4.6,
+    "weight": 0.1
+  },
+  {
+    "name": "Chocolate Cake",
+    "price": 15.99,
+    "discount": 0,
+    "stock": 30,
+    "category": "Cakes",
+    "description": "Rich chocolate cake.",
+    "image": [
+      "chocolate_cake_1.jpg",
+      "chocolate_cake_2.jpg",
+      "chocolate_cake_3.jpg"
+    ],
+    "rating": 4.8,
+    "weight": 1.5
+  },
+  {
+    "name": "Red Velvet Cake",
+    "price": 17.99,
+    "discount": 0,
+    "stock": 20,
+    "category": "Cakes",
+    "description": "Classic red velvet cake.",
+    "image": [
+      "red_velvet_cake_1.jpg",
+      "red_velvet_cake_2.jpg",
+      "red_velvet_cake_3.jpg"
+    ],
+    "rating": 4.7,
+    "weight": 1.5
+  },
+  {
+    "name": "Lemon Tart",
+    "price": 6.99,
+    "discount": 0,
+    "stock": 50,
+    "category": "Bakery",
+    "description": "Tangy lemon tart.",
+    "image": ["lemon_tart_1.jpg", "lemon_tart_2.jpg", "lemon_tart_3.jpg"],
+    "rating": 4.6,
+    "weight": 0.2
+  },
+  {
+    "name": "Banana Bread",
+    "price": 4.99,
+    "discount": 0,
+    "stock": 80,
+    "category": "Bread",
+    "description": "Moist banana bread.",
+    "image": ["banana_bread_1.jpg", "banana_bread_2.jpg", "banana_bread_3.jpg"],
+    "rating": 4.7,
+    "weight": 0.5
+  },
+  {
+    "name": "Cinnamon Roll",
+    "price": 3.49,
+    "discount": 0,
+    "stock": 60,
+    "category": "Bakery",
+    "description": "Sweet cinnamon roll.",
+    "image": [
+      "cinnamon_roll_1.jpg",
+      "cinnamon_roll_2.jpg",
+      "cinnamon_roll_3.jpg"
+    ],
+    "rating": 4.8,
+    "weight": 0.3
+  },
+  {
+    "name": "Cheesecake",
+    "price": 14.99,
+    "discount": 0,
+    "stock": 25,
+    "category": "Cakes",
+    "description": "Creamy cheesecake.",
+    "image": ["cheesecake_1.jpg", "cheesecake_2.jpg", "cheesecake_3.jpg"],
+    "rating": 4.9,
+    "weight": 1.2
+  },
+  {
+    "name": "Pumpkin Pie",
+    "price": 12.99,
+    "discount": 0,
+    "stock": 35,
+    "category": "Bakery",
+    "description": "Seasonal pumpkin pie.",
+    "image": ["pumpkin_pie_1.jpg", "pumpkin_pie_2.jpg", "pumpkin_pie_3.jpg"],
+    "rating": 4.8,
+    "weight": 1.1
+  }
+]

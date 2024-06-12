@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.product-categories Link {
+  @apply md:w-1/3 h-auto;
+  }
+.product-categories div:hover{
+  @apply cursor-pointer  ;
+  }
+
+
+.product-categories div img{
+  @apply w-full h-auto rounded-lg  ;
+}
+
+.product-categories div img:hover{
+  @apply shadow-xl
+}
+ 
+.product-categories div p{
+@apply pt-8 text-2xl font-bold text-orange-500
+} 
+body{
+  @apply bg-slate-100
+}
+.title_h1{
+  @apply text-5xl font-bold text-title-color text-center m-10
+}

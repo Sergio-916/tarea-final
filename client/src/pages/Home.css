@@ -1,0 +1,54 @@
+.homepage{
+    background-image: url('/img/main.jpg'); 
+       background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 80vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+.title{
+    padding-top: 80px;
+align-items: center;
+    font-size: 4rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px #000000;
+}
+.title + p {
+   padding-left: 50px;
+   padding-right: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px #000000;
+}
+.main{
+    margin: 0;
+    padding: 0;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.banner{
+display: flex;
+font-size: 3rem;
+color: rgb(255, 255, 255);
+text-shadow: 2px 2px 4px #000000;
+    height: 30vh;
+   
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.container{
+    padding: 50px;
+   
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+   
