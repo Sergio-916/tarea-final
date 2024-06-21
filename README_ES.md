@@ -55,12 +55,12 @@ El servidor estará disponible en: http://localhost:3050/
 ## Ejecución del Proyecto
 Para ejecutar el proyecto, debes iniciar tanto los servidores front-end como back-end. Abre dos ventanas o pestañas de terminal y ejecuta los siguientes comandos:
 
-# Terminal 1: Inicia el FrontEnd
+### Terminal 1: Inicia el FrontEnd
 
 cd client
 npm run dev
 
-# Terminal 2: Inicia el BackEnd
+### Terminal 2: Inicia el BackEnd
 
 cd server
 node index.js
