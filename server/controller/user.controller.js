@@ -2,7 +2,7 @@ const User = require("../models/user.model");
 const ShoppingCard = require("../models/shopping-card.model");
 const Favorite = require("../models/favorites.model")
 const Product = require("../models/product.model");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
