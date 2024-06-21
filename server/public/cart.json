@@ -1,0 +1,51 @@
+[
+    {
+        "product": {
+            "name": "Sourdough Bread",
+            "description": "Delicious sourdough bread.",
+            "image": [
+                "sourdough_bread_1.jpg",
+                "sourdough_bread_2.jpg",
+                "sourdough_bread_3.jpg"
+            ],
+            "price": 3.99,
+            "rating": 4.6,
+            "weight": 0.6,
+            "stock": 49,
+            "category": "Bread"
+        },
+        "quantity": 1
+    },
+    {
+        "product": {
+            "name": "Blueberry Muffin",
+            "description": "Sweet blueberry muffin.",
+            "image": [
+                "blueberry_muffin_1.jpg",
+                "blueberry_muffin_2.jpg",
+                "blueberry_muffin_3.jpg"
+            ],
+            "price": 2.49,
+            "rating": 4.5,
+            "weight": 0.15,
+            "stock": 140
+        },
+        "quantity": 10
+    },
+    {
+        "product": {
+            "name": "Chocolate Chip Cookie",
+            "description": "Classic chocolate chip cookie.",
+            "image": [
+                "chocolate_chip_cookie_1.jpg",
+                "chocolate_chip_cookie_2.jpg",
+                "chocolate_chip_cookie_3.jpg"
+            ],
+            "price": 0.99,
+            "rating": 4.8,
+            "weight": 0.05,
+            "stock": 299
+        },
+        "quantity": 1
+    }
+]

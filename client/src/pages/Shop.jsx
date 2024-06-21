@@ -4,11 +4,13 @@ import CategoriesCard from "../components/Categories-card/CategoriesCard";
 function Shop() {
   return (
     <>
-     <div className="container xl-auto">
-
+     <div className="container mx-auto">
       <CategoriesCard />
 
-      </div>
+     </div>
+
+
+    
     </>
   );
 }

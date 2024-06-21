@@ -4,13 +4,17 @@ const UserController = require("../controller/user.controller");
 const authToken = require("../middleware/auth");
 
 userRouter.route("/register").post(UserController.registerUser);
+
 userRouter.route("/login").post(UserController.loginUser);
-userRouter.route('/favorites').get(authToken, UserController.showFavorites);
 
-userRouter.route('/shopping-cart').get(authToken, UserController.showShoppingCart);
+userRouter.route('/shopping-cart').post(authToken, UserController.updateShoppingCart);
 
-userRouter.get("/profile", authToken, (req, res) => {
-    res.status(200).json({ message: 'Protected route accessed' });
-  });
+userRouter.route('/favorites/add').post(authToken, UserController.saveFavorites);
+
+userRouter.route('/favorites/delete').put(authToken, UserController.removeFromFavorites);
+
+userRouter.route('/favorites/:userId').get(authToken, UserController.getFavoritesByUserId);
+
+
 
 module.exports = userRouter;

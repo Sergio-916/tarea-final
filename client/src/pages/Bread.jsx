@@ -1,37 +1,41 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 import ProductCard from "../components/Cards/ProductCard";
 
+
 function Bread() {
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:3050/product/bread");
-        setData(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const  context  = useOutletContext(); 
 
-    fetchData();
-  }, []);
+  const data = context.breadData;
+
+
 
   return (
     <>
-      <div className="container xl-auto">
-        <h1 className="title_h1"> Bread</h1>
+      <div className="container mx-auto">
+        <article className="mb-10">
+          <h1 className="title_h1">
+          
+            Our Exceptional Bread
+          </h1>
+         
+        </article>
 
-        <header className="App-header">
+     
           {data.length > 0 ? (
-            <ul className="flex flex-wrap justify-between gap-8">
+            <ul className="flex flex-wrap gap-8 gap-y-10 justify-center lg:justify-evenly">
               {data.map((item) => (
                 <li key={item._id}>
                   <ProductCard
                     name={item.name}
                     description={item.description}
                     image={item.image}
+                    price={item.price}
+                    rating={item.rating}
+                    weight={item.weight}
+                    stock={item.stock}
+                    category={item.category}
+                    _id={item._id}
                   />
                 </li>
               ))}
@@ -39,7 +43,7 @@ function Bread() {
           ) : (
             <p>Loading...</p>
           )}
-        </header>
+  
       </div>
     </>
   );

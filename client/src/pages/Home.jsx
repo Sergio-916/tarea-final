@@ -1,4 +1,6 @@
 import CategoriesCard from "../components/Categories-card/CategoriesCard";
+import { FaCheckCircle } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import "./Home.css";
 function Home() {
   return (
@@ -6,29 +8,42 @@ function Home() {
       <div className="homepage">
         <main className="main">
           <h1 className="title font-bold m-6">Sergio Bakery</h1>
-          <p >
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            cupiditate ut repellendus maiores soluta. Ex doloremque ullam enim
-            molestiae optio veritatis ea, voluptate impedit iusto ab eos modi
-            laudantium neque?
+          <p className="lg:text-3xl text-xl">
+            Number 1 online shop of fresh bread and baked goods
           </p>
         </main>
       </div>
-      <div className="banner bg-title-color opacity-75">
-        Number 1 online shop of fresh bread and baked goods
-      </div>
-      <div className="container">
+      <div className="banner bg-title-color opacity-75"></div>
+      <div className="container mx-auto">
+      
         <CategoriesCard />
+        <div className="border-t-2 border-gray-300 mx-10 m-10" ></div>
 
-        <h1 className="text-title-color uppercase m-20 mt-40 font-bold text-2xl text-center text-red-500">
-          Our locations
+        <h1 className="font-bold text-2xl lg:text-4xl text-center text-orange-500 ">
+          Our Advantages
         </h1>
         <div className="flex justify-center">
-          <div className="w-1/2 h-80 bg-cyan-400"></div>
+          <ul className="p-6 space-y-2 text-center text-lg">
+            <li className="flex items-center">
+              <FaCheckCircle className="text-green-500 mr-2" /> Own network of
+              bakeries
+            </li>
+            <li className="flex items-center">
+              <FaCheckCircle className="text-green-500 mr-2" /> Traditional
+              recipes
+            </li>
+            <li className="flex items-center">
+              <FaCheckCircle className="text-green-500 mr-2" /> Best ingredients
+            </li>
+            <li className="flex items-center">
+              <FaCheckCircle className="text-green-500 mr-2" /> Quality control
+            </li>
+            <li className="flex items-center">
+              <FaCheckCircle className="text-green-500 mr-2" /> Fast and reliable delivery
+            </li>
+          </ul>
         </div>
       </div>
-
-
     </>
   );
 }

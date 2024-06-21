@@ -25,5 +25,27 @@ body{
   @apply bg-slate-100
 }
 .title_h1{
-  @apply text-5xl font-bold text-title-color text-center m-10
+  @apply lg:text-4xl text-2xl font-bold text-title-color text-center
+}
+.cart_ul li {
+  @apply my-3 text-lg
+}
+
+  th:first-child, td:first-child {
+     /* Задайте желаемую ширину */
+  }
+  .table-shoppingcart th:first-child, td:first-child{
+    width: 140px;
+  }
+  table,
+    th,
+    td {
+      
+        /* Styling the border. */
+       
+    }
+@media screen and (max-width: 640px) {
+  .table-shoppingcart th:first-child, td:first-child{
+    width: 110px;
+  }
 }

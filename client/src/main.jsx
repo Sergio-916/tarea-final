@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -12,8 +11,10 @@ import About from "./pages/About.jsx";
 import Bakery from "./pages/Bakery.jsx";
 import Bread from "./pages/Bread.jsx";
 import Cakes from "./pages/Cakes.jsx";
-
+import ShoppingCart from "./pages/ShoppingCart.jsx";
+import Favorites from "./pages/Favorites.jsx";
 import "./index.css";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,15 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      { path: "shopping-cart", element: <ShoppingCart /> },
+      {
+        path: "favorites",
+        element: (
+          <ProtectedRoute>
+            <Favorites />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

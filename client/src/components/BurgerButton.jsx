@@ -9,13 +9,14 @@ const StyledBurger = styled.div`
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
-  z-index: 10;
+ 
   cursor: pointer;
+
 
   div {
     width: 30px;
     height: 3px;
-    background-color: ${({ isopen }) => isopen ? '#ccc' : '#333'};
+    background-color: ${({ isopen }) => isopen ? '#ccc' : '#fff'};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;

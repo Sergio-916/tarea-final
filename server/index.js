@@ -19,28 +19,26 @@ app.use(
       maxAge: 3600,
     })
   );
+
+
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/product', router);
-app.use('/user', userRouter);
+app.use("/product", router);
+app.use("/user", userRouter);
 
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
-
-
-
 const appstart = async () => {
-    try {
-        await connectDB(process.env.MONGO_URL);
-        app.listen(PORT, () => {
-            console.log(`Server running on port: ${PORT}`);
-        });
-    } catch (error) {
-        console.log(error);
-    }
-}
+  try {
+    await connectDB(process.env.MONGO_URL);
+    app.listen(PORT, () => {
+      console.log(`Server running on port: ${PORT}`);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 appstart();
