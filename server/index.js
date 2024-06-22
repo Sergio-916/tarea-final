@@ -14,8 +14,7 @@ app.use(express.json());
 app.use(
   cors({
     origin:
-      // "http://localhost:5173" ||
-      "https://ecommerce-bakery-47dv7jd9a-sergio-916s-projects.vercel.app/",
+      "*",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     maxAge: 3600,
