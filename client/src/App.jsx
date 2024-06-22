@@ -19,15 +19,16 @@ function App() {
     breadData,
     bakeryData
   }
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3050";
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseCake = await axios.get("http://localhost:3050/product/cakes");
+        const responseCake = await axios.get(`${API_URL}/product/cakes`);
         setCakesData(responseCake.data);
-        const responseBread = await axios.get("http://localhost:3050/product/bread");
+        const responseBread = await axios.get(`${API_URL}/product/bread`);
         setBreadData(responseBread.data);
-        const responseBakry = await axios.get("http://localhost:3050/product/bakery");
+        const responseBakry = await axios.get(`${API_URL}/product/bakery`);
         setBakeryData(responseBakry.data);
       } catch (error) {
         console.log(error);
