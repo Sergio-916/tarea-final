@@ -10,26 +10,20 @@ const app = express();
 
 const PORT = process.env.PORT || 3050;
 
+
+
 app.use(express.json());
 app.use(
   cors({
     origin:
-      "*",
+       "http://localhost:5173", 
+      // "https://ecommerce-bakery-47dv7jd9a-sergio-916s-projects.vercel.app/",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     maxAge: 3600,
   })
 );
 
-app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://ecommerce-bakery-47dv7jd9a-sergio-916s-projects.vercel.app/"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
 
 app.use(express.urlencoded({ extended: true }));
 
