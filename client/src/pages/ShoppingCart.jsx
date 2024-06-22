@@ -41,6 +41,7 @@ function ShoppingCart() {
       }
     }
   };
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const cartSent = async () => {
     
@@ -51,7 +52,7 @@ function ShoppingCart() {
 try {
 
   await axios.post(
-    "http://localhost:3050/user/shopping-cart",
+    `${API_URL}/user/shopping-cart`,
     cartData,
     {
       headers: {

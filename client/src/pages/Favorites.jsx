@@ -12,11 +12,13 @@ function Favorites() {
 
   const { user, token } = useAuthStore();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   // request favorites list from DB and load when login
   const requestFavorites = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3050/user/favorites/${user._id}`,
+        `${API_URL}/user/favorites/${user._id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

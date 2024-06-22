@@ -20,6 +20,7 @@ function Register() {
       [name]: value,
     });
   };
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +31,7 @@ function Register() {
       try {
         console.log(formData);
         const response = await axios.post(
-          "http://localhost:3050/user/register",
+          `${API_URL}/user/register`,
           {
             username: formData.username,
             email: formData.email,

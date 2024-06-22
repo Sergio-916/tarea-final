@@ -52,6 +52,8 @@ function ProductCard({
  if (!token) {
   favorites = [];
  }
+
+ const API_URL = import.meta.env.VITE_API_URL;
  
  const saveFavorites = async (product, user) => {
   const favoritesData = {
@@ -60,7 +62,7 @@ function ProductCard({
   }
   try {
     await axios.post(
-      "http://localhost:3050/user/favorites/add", favoritesData,
+      `${API_URL}/user/favorites/add`, favoritesData,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -82,7 +84,7 @@ function ProductCard({
   }
   try {
     await axios.put(
-      "http://localhost:3050/user/favorites/delete", favoritesData,
+      `${API_URL}/user/favorites/delete`, favoritesData,
       {
         headers: {
           Authorization: `Bearer ${token}`,

@@ -22,12 +22,13 @@ const setUser = useAuthStore((state) => state.setUser);
       [name]: value,
     });
   };
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3050/user/login",
+        `${API_URL}/user/login`,
         formData
       );
       console.log("Server response:", response.data);
