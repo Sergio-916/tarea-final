@@ -15,7 +15,7 @@ app.use(
   cors({
     origin:
       "http://localhost:5173" ||
-      "https://ecommerce-bakery-git-main-sergio-916s-projects.vercel.app/",
+      "https://ecommerce-server-psi-opal.vercel.app/",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     maxAge: 3600,
