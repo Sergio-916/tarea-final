@@ -42,3 +42,7 @@ const appstart = async () => {
 };
 
 appstart();
+
+module.exports = app;
+
+
