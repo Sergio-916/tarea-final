@@ -12,14 +12,15 @@ const PORT = process.env.PORT || 3050;
 
 app.use(express.json());
 app.use(
-    cors({
-      origin: "http://localhost:5173",
-      credentials: true,
-      methods: ["GET", "POST", "PUT", "DELETE"],
-      maxAge: 3600,
-    })
-  );
-
+  cors({
+    origin:
+      "http://localhost:5173" ||
+      "https://ecommerce-bakery-git-main-sergio-916s-projects.vercel.app/",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    maxAge: 3600,
+  })
+);
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -44,5 +45,3 @@ const appstart = async () => {
 appstart();
 
 module.exports = app;
-
-
