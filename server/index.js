@@ -16,7 +16,8 @@ app.use(express.json());
 app.use(
   cors({
     origin:
-       "http://localhost:5173", 
+        // "http://localhost:5173", 
+       "https://vercel.com/sergio-916s-projects/ecommerce-bakery",
       // "https://ecommerce-bakery-47dv7jd9a-sergio-916s-projects.vercel.app/",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
