@@ -23,9 +23,7 @@ app.use(cors({
   maxAge: 3600,
 }));
 
-app.use(
-  cors()
-)
+
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -36,6 +34,9 @@ app.use("/user", userRouter);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
+
+
 
 const appstart = async () => {
   try {
