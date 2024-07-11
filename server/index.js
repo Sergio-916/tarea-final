@@ -16,7 +16,7 @@ app.use(express.json());
 
 
 app.use(cors({
-  origin: "https://vercel.com/sergio-916s-projects/ecommerce-bakery",
+  origin: "https://ecommerce-bakery.vercel.app/",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type"],
   credentials: true,
