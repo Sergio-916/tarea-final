@@ -1,6 +1,6 @@
 import CategoriesCard from "../components/Categories-card/CategoriesCard";
 import { FaCheckCircle } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+
 import "./Home.css";
 function Home() {
   return (
@@ -8,7 +8,7 @@ function Home() {
       <div className="homepage">
         <main className="main">
           <h1 className="title font-bold m-6">Sergio Bakery</h1>
-          <p className="lg:text-3xl text-xl">
+          <p className="lg:text-2xl text-lg">
             Number 1 online shop of fresh bread and baked goods
           </p>
         </main>
@@ -23,7 +23,7 @@ function Home() {
           Our Advantages
         </h1>
         <div className="flex justify-center">
-          <ul className="p-6 space-y-2 text-center text-lg">
+          <ul className="p-6 space-y-2 text-center text-md">
             <li className="flex items-center">
               <FaCheckCircle className="text-green-500 mr-2" /> Own network of
               bakeries

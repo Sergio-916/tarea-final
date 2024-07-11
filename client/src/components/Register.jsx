@@ -39,7 +39,7 @@ function Register() {
           }
         );
         console.log("Server response", response.formData);
-        navigate("/");
+        navigate("/login");
       } catch (error) {
         if (error.response && error.response.status === 409) {
           alert("User email already exists");

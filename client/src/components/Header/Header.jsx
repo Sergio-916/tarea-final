@@ -59,7 +59,7 @@ function Header() {
   const menu = (
     <>
       <div
-        className="menu text-slate-100 sm:text-xl text-lg bg-title-color opacity-75  font-bold"
+        className="menu text-slate-100 sm:text-gl text-md bg-title-color opacity-75  font-bold"
         ref={menuRef}
       >
         <div className="menu__logo">
