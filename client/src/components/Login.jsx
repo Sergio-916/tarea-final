@@ -12,14 +12,16 @@ function Login() {
 
   const login = useAuthStore((state) => state.login);
 
-const setUser = useAuthStore((state) => state.setUser);
+  const setUser = useAuthStore((state) => state.setUser);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData({
       ...formData,
-      [name]: value,
+      
+      [name]: value.toLowerCase()
     });
   };
   const API_URL = import.meta.env.VITE_API_URL;
@@ -27,10 +29,7 @@ const setUser = useAuthStore((state) => state.setUser);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${API_URL}/user/login`,
-        formData
-      );
+      const response = await axios.post(`${API_URL}/user/login`, formData);
       console.log("Server response:", response.data);
       const { token, user } = response.data;
       login(token); // store token in local & Zustand storage
@@ -42,8 +41,6 @@ const setUser = useAuthStore((state) => state.setUser);
       alert("Invalid email or password");
     }
   };
-
-
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">

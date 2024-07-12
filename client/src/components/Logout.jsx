@@ -22,7 +22,7 @@ function Logout({ isModalOpen, closeModal }) {
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className="text-center p-10">
           <h1 className="text-xl font-bold mb-6 text-center text-gray-700">
-            Confirnation
+            Confirmation
           </h1>
 
           <p>Are you sure you want to logout?</p>

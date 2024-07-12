@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useStore from "../../store/store";
 
-function PlusMinus({ initialQty, item }) {
+function PlusMinus({ initialQty, item, stock }) {
   const [quantity, setQuantity] = useState(initialQty);
   const removeFromCart = useStore((state) => state.removeFromCart);
   const addToCart = useStore((state) => state.addToCart);
@@ -16,6 +16,10 @@ function PlusMinus({ initialQty, item }) {
   };
 
   const handleIncrement = () => {
+    if (stock <= 0) {
+      console.log("Not enough stock");
+      return;
+    }
     setQuantity((prevQty) => prevQty + 1);
     addToCart(item);
   };

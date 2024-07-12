@@ -6,7 +6,6 @@ import { MdFavorite } from "react-icons/md";
 import useStore from "../../store/store";
 import { useAuthStore } from "../../store/auth";
 
-
 function DetailedCard({
   name,
   description,
@@ -25,8 +24,7 @@ function DetailedCard({
 
   if (!token) {
     favorites = [];
-   }
-  
+  }
 
   const addToFavorites = useStore((state) => state.addToFavorites);
   const removeFromFavorites = useStore((state) => state.removeFromFavorites);
@@ -38,19 +36,21 @@ function DetailedCard({
     }
   };
 
-  
   return (
     <>
-      <div className="bg-white w-full border-2 border-gray-300 flex flex-col  hover:shadow-xl rounded-xl">
-     <div className="relative">
-      <div onClick={toggleFavorite} className="absolute w-8 h-8 top-1 right-9 ">
-          {favorites.map((item) => item._id).includes(product._id) ? (
-            <MdFavorite size={30} color="red" />
-          ) : (
-            <MdFavoriteBorder size={30} color="gray" />
-          )}
+      <div className="bg-white  border-2 border-gray-300 flex flex-col  hover:shadow-xl rounded-xl">
+        <div className="relative">
+          <div
+            onClick={toggleFavorite}
+            className="absolute w-8 h-8 top-1 right-9 "
+          >
+            {favorites.map((item) => item._id).includes(product._id) ? (
+              <MdFavorite size={30} color="red" />
+            ) : (
+              <MdFavoriteBorder size={30} color="gray" />
+            )}
+          </div>
         </div>
-     </div>
         <div className="flex sm:flex-row flex-col">
           <div className="sm:w-2/3 flex flex-col items-center p-4">
             <img
@@ -80,15 +80,15 @@ function DetailedCard({
         </div>
       </div>
       <div className="flex justify-center">
-      <div className="flex w-2/3 gap-4 justify-center pt-4">
-        <MyBtn onClick={() => addToCart(product)} className="flex-1">
-          Add to Cart
-        </MyBtn>
+        <div className="flex w-2/3 gap-4 justify-center pt-4">
+          <MyBtn onClick={() => addToCart(product)} className="flex-1">
+            Add to Cart
+          </MyBtn>
 
-        <MyBtn  onClick={() => closeModal()} className="flex-1">
-          Continue Shopping
-        </MyBtn>
-      </div>
+          <MyBtn onClick={() => closeModal()} className="flex-1">
+            Continue Shopping
+          </MyBtn>
+        </div>
       </div>
     </>
   );

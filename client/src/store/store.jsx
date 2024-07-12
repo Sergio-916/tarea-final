@@ -7,42 +7,50 @@ const useStore = create(
     (set) => ({
       cart: [],
       inventory: [],
-      favorites: [], 
+      favorites: [],
       userFavorites: {},
 
-      addToFavorites: (product) =>
-        set((state) => {
-          const user = useAuthStore.getState().user;
-          const token = useAuthStore.getState().token;         
+      addToFavorites: (product) => {
+        const user = useAuthStore.getState().user;
+        const token = useAuthStore.getState().token;
 
-          if (!token && !user) {
-            return state;
+        if (!token || !user) {
+          return; // Exit if no user or token
+        }
+
+        set((state) => {
+          const existingFavorites = state.favorites.find(
+            (item) => item.name === product.name
+          );
+          if (!existingFavorites) {
+            return {
+              favorites: [...state.favorites, product],
+              userFavorites: user._id,
+            };
           } else {
-            const existingFavorites = state.favorites.find((item) => item.name === product.name);
-            if (!existingFavorites) {
-              return {
-                favorites: [...state.favorites, product],
-                userFavorites: user._id
-              };
-            } else {
-              return state;
-            }
+            return state;
           }
-        }),
+        });
+      },
 
       removeFromFavorites: (product) =>
         set((state) => ({
           favorites: state.favorites.filter((item) => item.name !== product.name),
         })),
-      
+
       clearCart: () => set({ cart: [] }),
       clearFavorites: () => set({ favorites: [] }),
-      
+
       addToCart: (product) =>
         set((state) => {
           const existingProduct = state.cart.find(
             (item) => item.product.name === product.name
           );
+
+          if (product.stock <= 0) {
+            console.log("Not enough stock");
+            return state; // Return the current state if stock is zero
+          }
 
           if (existingProduct) {
             return {
@@ -60,20 +68,15 @@ const useStore = create(
               ),
             };
           } else {
-            if (product.stock > 0) {
-              return {
-                cart: [
-                  ...state.cart,
-                  {
-                    product: { ...product, stock: product.stock - 1 },
-                    quantity: 1,
-                  },
-                ],
-              };
-            } else {
-              console.log("Not enough stock");
-              return state;
-            }
+            return {
+              cart: [
+                ...state.cart,
+                {
+                  product: { ...product, stock: product.stock - 1 },
+                  quantity: 1,
+                },
+              ],
+            };
           }
         }),
 
@@ -142,8 +145,8 @@ const useStore = create(
 
       setFavorites: (favorites) =>
         set(() => ({
-          favorites: favorites
-        }))
+          favorites: favorites,
+        })),
     }),
     {
       name: "cart-storage",

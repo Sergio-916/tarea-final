@@ -118,6 +118,7 @@ try {
                           <PlusMinus
                             initialQty={item.quantity}
                             item={item.product}
+                            stock={item.product.stock}
                           >
                             {item.quantity}
                           </PlusMinus>
