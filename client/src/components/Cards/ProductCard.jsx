@@ -30,7 +30,7 @@ function ProductCard({
     weight,
     stock,
     category,
-    _id,   
+    _id,
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,63 +44,68 @@ function ProductCard({
   };
   const closeDetailedCard = () => setDetailedCard(false);
 
-   let { favorites } = useStore();
-   const { token, user } = useAuthStore();
+  let { favorites } = useStore();
+  const { token, user } = useAuthStore();
   const addToFavorites = useStore((state) => state.addToFavorites);
   const removeFromFavorites = useStore((state) => state.removeFromFavorites);
 
- if (!token) {
-  favorites = [];
- }
-
- const API_URL = import.meta.env.VITE_API_URL;
- 
- const saveFavorites = async (product, user) => {
-  const favoritesData = {
-   product,
-   user
+  if (!token) {
+    favorites = [];
   }
-  try {
-    await axios.post(
-      `${API_URL}/user/favorites/add`, favoritesData,
-      {
+
+  const API_URL = import.meta.env.VITE_API_URL;
+
+  const saveFavorites = async (product, user) => {
+    const favoritesData = {
+      product,
+      user,
+    };
+    if (token) {
+      try {
+        await axios.post(`${API_URL}/user/favorites/add`, favoritesData, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+      } catch (error) {
+        console.log(error);
+        if (
+          error.response &&
+          error.response.data &&
+          error.response.data.message == "Token expired"
+        ) {
+          alert("Token expired. Please login again");
+        }
+      }
+    } else {
+      alert("Please login to save favorites");
+    }
+  };
+
+  const deleteFavorites = async (product, user) => {
+    const favoritesData = {
+      product,
+      user,
+    };
+    try {
+      await axios.put(`${API_URL}/user/favorites/delete`, favoritesData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      })
-  } catch (error) {
-    console.log(error);
-    if (error.response && error.response.data && error.response.data.message == "Token expired") {
-      alert('Token expired. Please login again')
-     }
-  }
-}
-
-
- const deleteFavorites = async (product, user) => {
-  const favoritesData = {
-   product,
-   user
-  }
-  try {
-    await axios.put(
-      `${API_URL}/user/favorites/delete`, favoritesData,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-  } catch (error) {
-    console.log(error);
-    if (error.response && error.response.data && error.response.data.message == "Token expired") {
-      alert('Token expired. Please login again')
-     }
-  }
-}
-
+      });
+    } catch (error) {
+      console.log(error);
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message == "Token expired"
+      ) {
+        alert("Token expired. Please login again");
+      }
+    }
+  };
 
   const toggleFavorite = () => {
-
     if (favorites.map((item) => item._id).includes(product._id)) {
       removeFromFavorites(product);
       deleteFavorites(product, user); // remove from DB
@@ -114,14 +119,16 @@ function ProductCard({
     <>
       <div className="bg-white w-80 h-460 border-solid border-2 flex flex-col justify-evenly hover:cursor-pointer hover:shadow-xl rounded-xl">
         <div className="flex justify-end">
-        <div onClick={toggleFavorite} className="inline-flex w-12 h-12 justify-center items-center ">
-          {favorites.map((item) => item._id).includes(product._id) ? (
-            <MdFavorite size={30} color="red" />
-          ) : (
-            <MdFavoriteBorder size={30} color="gray" />
-          )}
-        </div>
-
+          <div
+            onClick={toggleFavorite}
+            className="inline-flex w-12 h-12 justify-center items-center "
+          >
+            {favorites.map((item) => item._id).includes(product._id) ? (
+              <MdFavorite size={30} color="red" />
+            ) : (
+              <MdFavoriteBorder size={30} color="gray" />
+            )}
+          </div>
         </div>
         <div className=" overflow-hidden flex justify-center items-center pl-8 pr-8">
           <img
@@ -131,10 +138,7 @@ function ProductCard({
             alt={image}
           />
         </div>
-        <ul
-          onClick={handleClick}
-          className="cart_ul pb-2 border-t-2 mx-8 "
-        >
+        <ul onClick={handleClick} className="cart_ul pb-2 border-t-2 mx-8 ">
           <li className="font-bold">{name}</li>
           <li className="overflow-hidden text-ellipsis">{description}</li>
           <li className="text-red-500 font-bold">Price: $ {price}</li>
