@@ -100,7 +100,7 @@ try {
                   <tbody>
                     {cart.map((item, index) => (
                       <tr key={index}>
-                        <td className="p-4">
+                        <td className="lg:p-4 p-0">
                           <img
                             className="w-20 h-20"
                             src={`/img/${item.product.image[0]}`}

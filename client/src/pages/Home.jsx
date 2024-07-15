@@ -8,7 +8,7 @@ function Home() {
       <div className="homepage">
         <main className="main">
           <h1 className="title font-bold m-6">Sergio Bakery</h1>
-          <p className="lg:text-2xl text-lg">
+          <p className="lg:text-2l text-lg">
             Number 1 online shop of fresh bread and baked goods
           </p>
         </main>
@@ -19,7 +19,7 @@ function Home() {
         <CategoriesCard />
         <div className="border-t-2 border-gray-300 mx-10 m-10" ></div>
 
-        <h1 className="font-bold text-2xl lg:text-4xl text-center text-orange-500 ">
+        <h1 className="font-bold text-xl lg:text-2xl text-center text-orange-500 ">
           Our Advantages
         </h1>
         <div className="flex justify-center">

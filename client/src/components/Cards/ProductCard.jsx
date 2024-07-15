@@ -117,7 +117,7 @@ function ProductCard({
 
   return (
     <>
-      <div className="bg-white w-80 h-460 border-solid border-2 flex flex-col justify-evenly hover:cursor-pointer hover:shadow-xl rounded-xl">
+      <div className="bg-white lg:w-64 w-72 h-460 border-solid border-2 flex flex-col justify-evenly hover:cursor-pointer hover:shadow-xl rounded-xl">
         <div className="flex justify-end">
           <div
             onClick={toggleFavorite}
@@ -130,23 +130,23 @@ function ProductCard({
             )}
           </div>
         </div>
-        <div className=" overflow-hidden flex justify-center items-center pl-8 pr-8">
+        <div className=" overflow-hidden w-50 h-50 flex justify-center items-center pl-8 pr-8">
           <img
             onClick={handleClick}
-            className="  object-cover w-64 overflow-hidden rounded-sm"
+            className="object-cover rounded-sm"
             src={`/img/${image[0]}`}
             alt={image}
           />
         </div>
-        <ul onClick={handleClick} className="cart_ul pb-2 border-t-2 mx-8 ">
+        <ul onClick={handleClick} className="cart_ul pb-2 border-t-2 mx-8 max-h-40 ">
           <li className="font-bold">{name}</li>
           <li className="overflow-hidden text-ellipsis">{description}</li>
           <li className="text-red-500 font-bold">Price: $ {price}</li>
           <li>Rating: {rating}</li>
         </ul>
-        <div className="flex justify-center gap-3 px-6 pb-8">
+        <div className="flex justify-center gap-3  pb-4">
           <MyBtn
-            className="w-1/2"
+            className="w-2/3"
             onClick={() => {
               openModal();
               addToCart(product);

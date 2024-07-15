@@ -25,10 +25,10 @@ body{
   @apply bg-slate-100
 }
 .title_h1{
-  @apply lg:text-4xl text-2xl font-bold text-title-color text-center
+  @apply lg:text-2xl text-xl font-bold text-title-color text-center
 }
 .cart_ul li {
-  @apply my-3 text-lg
+  @apply my-3 text-base
 }
 
   th:first-child, td:first-child {
